@@ -65,21 +65,22 @@ if predictor:
     target = st.number_input('Target',value=200)
     curr_score = st.number_input('Current Score',value=100)
     wickets = st.number_input('Wickets',value=1)
-    over = st.number_input('Over',value=7.2)
+    num_overs = st.number_input('Over Number',value=7,min_value=0,max_value=19,step=1)
+    num_balls = st.number_input('Ball Number',value=2,min_value=0,max_value=6,step=1)
     
-    str_over = str(over)    
-    if '.' in str_over:
-        num_over, num_balls = str_over.split('.')
-    else:
-        num_over = str_over
-        num_balls = '0'
+    #str_overs = str(over)
+    #if '.' in str_over:
+    #    num_overs, num_balls = str_over.split('.')
+    #else:
+    #    num_overs = str_over
+    #    num_balls = '0'
 
     if st.button("Calculate Win Probability"):
         if (batting_team == bowling_team):
             st.error('Error: Batting and Bowling team can not be same!')
         else:
             runs_needed = target - curr_score
-            balls = float(num_over)*6. + float(num_balls)
+            balls = float(num_overs)*6. + float(num_balls)
             balls_rem = 120. - balls
             wickets_left = 10. - wickets
             rr = curr_score/(balls/6.)
