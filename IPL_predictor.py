@@ -49,7 +49,7 @@ team_name_dict = {
     'SRH': 'Hyderabad'
 }
 
-data_columns = ['batting_team', 'bowling_team', 'runs_needed', 'balls_remaining',
+data_columns = ['batting_team', 'bowling_team', 'target_score', 'runs_needed', 'balls_remaining',
                 'wickets_left', 'runrate', 'required_runrate', 'runrate_pressure']
 
 def create_dataframe(input_data):
