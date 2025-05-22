@@ -41,7 +41,7 @@ team_name_dict = {
     'DC': 'Delhi',
     'GT': 'Gujarat',
     'KKR': 'Kolkata',
-    'LSG': 'Kochi',
+    'LSG': 'Others',
     'MI': 'Mumbai',
     'PBKS': 'Punjab',
     'RCB': 'Bangalore',
@@ -50,7 +50,7 @@ team_name_dict = {
 }
 
 data_columns = ['batting_team', 'bowling_team', 'target_score', 'runs_needed', 'balls_remaining',
-                'wickets_left', 'runrate', 'required_runrate', 'pressure_index']
+                'wickets_left', 'runrate', 'required_runrate', 'runrate_pressure']
 
 def create_dataframe(input_data):
     data_dict = {}
@@ -85,9 +85,9 @@ if predictor:
             wickets_left = 10. - wickets
             rr = curr_score/(balls/6.)
             rrr = (target - curr_score)/((120 - balls)/6.)
-            p_index = rrr/rr
+            rr_p = rrr/rr
         
-            input_list = [batting_team,bowling_team,target,runs_needed,balls_rem,wickets_left,rr,rrr,p_index]
+            input_list = [batting_team,bowling_team,target,runs_needed,balls_rem,wickets_left,rr,rrr,rr_p]
         
             input_df = create_dataframe(input_list)
         
