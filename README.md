@@ -30,3 +30,15 @@ The primary objective is to build a robust and intuitive win probability predict
 * **Matplotlib & Seaborn** (Data Visualization)
 
 ---
+
+## 📊 Model Performance: Live Match Validation
+
+A true test of any predictive model lies in its real-world performance, especially for dynamic events like a cricket match. For win probability, **probability calibration** – how closely the predicted probabilities align with actual observed frequencies – is often more crucial than simple classification accuracy.
+
+To validate my model's capabilities, I tracked a live cricket match (Mumbai Indians vs. Royal Challengers Bangalore, for example) and compared its real-time win probability predictions against those displayed on the highly reputable **ESPN Cricinfo** website.
+
+### **Visualizing Live Probability Shifts**
+
+The plot below illustrates how both my model's and Cricinfo's predicted win probabilities for the **Bowling Team** evolved over the course of the match. Key events that influenced momentum are also highlighted, providing essential context to the probability swings.
+
+![Win Probability Comparison Plot](win_probability_comparison.png)
